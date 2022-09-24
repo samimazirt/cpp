@@ -3,7 +3,7 @@
 
 void is_prime(int k) {
     if (k == 1) {
-        std::cout << k << " is a prime: True" << std::endl;
+        std::cout << k << " is a prime: False" << std::endl;
         return;
     }
     for (int i = 2; i < k/2; i++) {
