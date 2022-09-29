@@ -1,0 +1,1 @@
+Rien à signaler pour is_prime et find_motive, les fonctions marchent correctement
