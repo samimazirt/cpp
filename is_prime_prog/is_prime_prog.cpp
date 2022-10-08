@@ -1,12 +1,30 @@
 #include <iostream>
 #include <string>
 
-void is_prime(int k) {
-    if (k == 1) {
+
+long long sqrt(long long k)
+{
+    long long j = 0;
+    while (j * j < k)
+    {
+	j++;
+    }
+    return j;
+}
+
+
+void is_prime(long long k) {
+    if (k <= 1) {
         std::cout << k << " is a prime: False" << std::endl;
         return;
     }
-    for (int i = 2; i < k/2; i++) {
+    //if (k <= 3) {
+//	std::cout << k << " is a prime: True" << std::endl;
+ //   	return;
+   // }
+   //
+    long long tmp = sqrt(k);
+    for (long long i = 2; i < tmp; ++i) {
         if (k%i == 0) {
             std::cout << k << " is a prime: False" << std::endl;
             return;
@@ -20,12 +38,12 @@ int main() {
     std::getline(std::cin, nums);
     std::string num = "";
 
-    for(long unsigned int k = 0; k < nums.length(); k++) {
+    for(long long k = 0; k < (long long) nums.length(); k++) {
         if (isdigit(nums[k])) {
             num += nums[k];
         }
         if (nums[k+1] == ' ' || nums[k+1] == '\0') {
-            is_prime(stoi(num));
+            is_prime(std::stoll(num));
             num = "";
         }
     }
