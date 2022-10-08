@@ -23,8 +23,8 @@ void is_prime(long long k) {
  //   	return;
    // }
    //
-    long long tmp = sqrt(k);
-    for (long long i = 2; i < tmp; ++i) {
+    //long long tmp = sqrt(k);
+    for (long long i = 2; i < k/2; ++i) {
         if (k%i == 0) {
             std::cout << k << " is a prime: False" << std::endl;
             return;
