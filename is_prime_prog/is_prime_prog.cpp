@@ -12,7 +12,6 @@ long long sqrt(long long k)
     return j;
 }
 
-
 void is_prime(long long k) {
     if (k <= 1) {
         std::cout << k << " is a prime: False" << std::endl;

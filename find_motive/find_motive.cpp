@@ -7,6 +7,7 @@ int main(int argc, char* argv[]) {
 	{
 		return 1;
 	}
+
 	std::ifstream file;
 	file.open(argv[1]);
 	if (file.fail()) {
@@ -14,15 +15,15 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	std::string word;
-	int count = 0;
+	int k = 0;
 	while (file >> word)
 	{
 		if (word.find(argv[2]) != std::string::npos)
 		{
-			count++;
+			k++;
 		}
 	}
-	std::cout << "The file " << argv[1] << " contains " << count << " words containing the motive " << argv[2] << "\n";
+	std::cout << "The file " << argv[1] << " contains " << k << " words containing the motive " << argv[2] << "\n";
 	return 0;
 
 }
