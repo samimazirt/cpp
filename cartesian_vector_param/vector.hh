@@ -99,7 +99,6 @@ Vector operator*(int scalar, const Vector& rhs)
 {
     return Vector(rhs.getX() * scalar, rhs.getY() * scalar);
 }
-
 int operator*(const Vector& lhs, const Vector& rhs)
 {
     return lhs.getX() * rhs.getX() + lhs.getY() * rhs.getY();
