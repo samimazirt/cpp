@@ -12,41 +12,43 @@ long long sqrt(long long k)
     return j;
 }
 
-void is_prime(long long k) {
-    if (k <= 1) {
-        std::cout << k << " is a prime: False" << std::endl;
-        return;
+bool is_prime(long long t)
+{
+    if (t < 2){
+	    return false;
     }
-    //if (k <= 3) {
-//	std::cout << k << " is a prime: True" << std::endl;
- //   	return;
-   // }
-   //
-    //long long tmp = sqrt(k);
-    for (long long i = 2; i < k/2; ++i) {
-        if (k%i == 0) {
-            std::cout << k << " is a prime: False" << std::endl;
-            return;
+    else if (t <= 3){
+	    return true;
+    }
+    if (t % 2 == 0 || t % 3 == 0)
+    {
+	    return false;
+    }
+    long long i = 5;
+    while (i * i <= t)    
+    {
+        if (0 == t % i)
+        {
+            return false;
         }
+	i += 1;
     }
-    std::cout << k << " is a prime: True" << std::endl;
+    return true;
 }
 
-int main() {
-    std::string nums;
-    std::getline(std::cin, nums);
-    std::string num = "";
-
-    for(long long k = 0; k < (long long) nums.length(); k++) {
-        if (isdigit(nums[k])) {
-            num += nums[k];
-        }
-        if (nums[k+1] == ' ' || nums[k+1] == '\0') {
-            is_prime(std::stoll(num));
-            num = "";
-        }
+int main()
+{
+    long long number;
+    while(std::cin >> number)
+    {
+        if(is_prime(number) == false)
+	{
+		std::cout << number << " is a prime: False\n";
+	}
+	else
+	{
+		std::cout << number << " is a prime: True\n";
+	}
     }
     return 0;
-
-
 }
