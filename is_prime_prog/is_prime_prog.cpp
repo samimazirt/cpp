@@ -11,7 +11,6 @@ long long sqrt(long long k)
     }
     return j;
 }
-
 bool is_prime(long long t)
 {
     if (t < 2){
